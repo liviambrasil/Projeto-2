@@ -3,6 +3,9 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.header-mobile {
+    display: none;
+}
 .top {
     display: flex;
     justify-content: center;
@@ -12,7 +15,7 @@ body {
     height: 54px;
     width: 100%; 
 }
-.header {   
+.header-desktop {   
     width: 935px;
     display: flex;
     align-items: center;
@@ -69,6 +72,16 @@ body {
             display: flex;
             border: 1px solid #DBDBDB;
             border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        .stories ion-icon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 9px;
+            top: 46px;
+            color: white;
         }
             .story-user {
                 display: flex;
@@ -76,7 +89,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                margin-left: 18px;
+                margin-left: 14px;
             }
                 .story-user p {
                     font-size: 12px;
@@ -95,6 +108,7 @@ body {
                         width: 56px;
                         height: 56px;
                         border-radius: 100%;
+                        object-fit: cover;
                     }
 
         .posts {
@@ -220,11 +234,13 @@ body {
         
         .suggestion {
             display: flex;
+            margin: 0 0 16px 0;
         }
             .suggestion img {
                 width: 32px;
                 height: 32px;
                 border-radius: 100%;
+                object-fit: cover;
             }
 
         .user-description {
@@ -249,3 +265,54 @@ body {
             font-size: 12px;
             color: #139EF2;
         }
+
+/** tablet **/
+@media (max-width: 935px) {
+
+    .sidebar {
+        display: none;
+    }
+    .header {
+        margin: 0 21px 0 21px;
+        box-sizing: border-box;
+    }
+}
+
+/**mobile**/
+@media (max-width: 614px) {
+    
+    .header-desktop {
+        display: none;
+    }
+
+    .header-mobile {
+        display: flex;
+        justify-content: space-between;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 54px;
+        width: 100%;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 16px 0 16px;
+    }
+    
+    .header-mobile ion-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .contents {
+        margin-top: 54px;
+    }
+    .stories {
+        margin: 0;
+        border: 0;
+        background: none;
+    }
+    
+    .stories > ion-icon {
+        display: none;
+    }
